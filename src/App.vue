@@ -110,13 +110,13 @@ h1 {
 }
 
 .grid-move,
-.grid-leave-active,
 .grid-enter-active {
   transition: all 0.5s ease-in-out !important;
 }
 
 .grid-leave-active {
-  position: absolute !important;
+  transition: all 0.2s ease-in-out !important;
+  // position: absolute !important;
 }
 
 .grid-enter {
