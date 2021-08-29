@@ -79,7 +79,7 @@ export default class VCRouter extends Vue {
     z-index: 10;
     position: absolute;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden auto;
   }
 }
 </style>

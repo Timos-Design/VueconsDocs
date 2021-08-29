@@ -1,11 +1,11 @@
 <template>
   <div class="view-icon">
-    <div class="container">
+    <VCHero>
       <h1>
         <i :is="componentName" />
         <span>{{ icon }}</span>
       </h1>
-    </div>
+    </VCHero>
 
     <br /><br />
     <div content>
@@ -94,9 +94,14 @@
 </template>
 
 <script lang="ts">
+import VCHero from '@/components/VCHero.vue';
 import { Vue, Component } from 'vue-property-decorator';
 
-@Component
+@Component({
+  components: {
+    VCHero,
+  },
+})
 export default class Icon extends Vue {
   public options = {
     circle: false,
@@ -126,8 +131,19 @@ export default class Icon extends Vue {
 <style lang="scss" scoped>
 .view-icon {
   padding: 0;
-  padding-top: calc(50px + env(safe-area-inset-top));
   max-width: unset;
+
+  .vc-hero {
+    h1 {
+      display: flex;
+      align-items: center;
+      max-width: $max-width;
+      margin: 0 auto;
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
 
   [content] {
     padding-top: 0px;
@@ -148,16 +164,6 @@ export default class Icon extends Vue {
       position: absolute;
       top: 5px;
       right: 5px;
-    }
-
-    h1 {
-      display: flex;
-      align-items: center;
-      max-width: $max-width;
-      margin: 0 auto;
-      span {
-        margin-left: 10px;
-      }
     }
 
     .grid {

@@ -3,9 +3,16 @@
     <h1>Library. <span>Find the best icons for your next project</span></h1>
     <br />
 
-    <transition-group name="grid" class="icon-grid">
-      <VCIconTile v-for="i in icons" :key="i" :icon="i" />
-    </transition-group>
+    <div class="grid-wrapper">
+      <vm-title
+        v-if="icons.length === 0"
+        subtitle="no results for"
+        :title="`'${query}'`"
+      />
+      <transition-group name="grid" class="icon-grid">
+        <VCIconTile v-for="i in icons" :key="i" :icon="i" />
+      </transition-group>
+    </div>
   </div>
 </template>
 
@@ -19,11 +26,14 @@ import { Vue, Component } from 'vue-property-decorator';
   },
 })
 export default class Library extends Vue {
+  get query(): string {
+    return this.$store.state.query;
+  }
+
   get icons(): string[] {
-    const query: string = this.$store.state.query;
     return (this.$store.getters.icons as string[]).filter((x) => {
-      if (query.length === 0) return true;
-      return x.toLowerCase().includes(query.toLowerCase());
+      if (this.query.length === 0) return true;
+      return x.toLowerCase().includes(this.query.toLowerCase());
     });
   }
 }
@@ -33,15 +43,25 @@ export default class Library extends Vue {
 .view-library {
   padding-top: calc(110px + env(safe-area-inset-top));
 
-  .icon-grid {
+  .grid-wrapper {
     padding: 20px;
     background: rgba(var(--vm-paragraph), 1);
-    min-height: 4rem;
+    // min-height: 4rem;
     border-radius: $border-radius;
 
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+    .vm-title {
+      height: 4rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+    }
   }
 }
 </style>

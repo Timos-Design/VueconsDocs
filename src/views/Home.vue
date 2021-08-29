@@ -1,8 +1,17 @@
 <template>
   <div class="view-home">
-    <div class="hero">
+    <VCHero>
       <h1>Vuecons. <span>SVG Icon Library for Vue.js</span></h1>
-    </div>
+      <form @submit.stop.prevent="$router.push({ name: 'library' })">
+        <vm-input
+          frosted
+          size="medium"
+          placeholder="Search for an icon..."
+          v-model="$store.state.query"
+        />
+      </form>
+    </VCHero>
+    <div class="hero"></div>
 
     <div content>Welcome</div>
 
@@ -15,8 +24,13 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import backend from '@/utils/backend';
+import VCHero from '@/components/VCHero.vue';
 
-@Component
+@Component({
+  components: {
+    VCHero,
+  },
+})
 export default class Home extends Vue {
   public fileChanged(e: Event): void {
     const element = e.target as HTMLInputElement;
@@ -47,31 +61,40 @@ export default class Home extends Vue {
 
 <style lang="scss" scoped>
 .view-home {
-  .hero {
+  padding: 0;
+  max-width: unset;
+
+  .vc-hero {
     background-size: cover;
     background-repeat: no-repeat;
     // background-position:  center;
+    padding: 30px 0;
     background-image: linear-gradient(
         to bottom,
-        rgba(#000, 0.4),
-        rgba(#000, 0.4)
+        rgba(#000, 0.5),
+        rgba(#000, 0.5)
       ),
       url('https://images.unsplash.com/photo-1626682560883-60eef9239200?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80');
 
-    h1 {
-      padding: 50px 5vw;
-      padding-top: calc(env(safe-area-inset-top) + 100px);
-      max-width: $max-width;
-      margin: 0 auto;
-      color: #fff;
-      text-align: center;
-      span {
-        color: darken(#fff, 20%);
-      }
+    color: #fff;
+    text-align: center;
+    span {
+      color: darken(#fff, 20%);
     }
   }
-  padding: 0;
-  max-width: unset;
+
+  form {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 400px;
+    font-weight: 500;
+    .vm-input {
+      color: #fff;
+      box-shadow: inset 0 0 5px 4px #111;
+      border-radius: 7.5px;
+    }
+  }
 
   [content] {
     padding-top: 20px;
