@@ -19,7 +19,7 @@ export default class VCHero extends Vue {}
   &--content {
     position: relative;
     width: 90vw;
-    padding: 20px 5vw;
+    padding: 30px 5vw;
     max-width: $max-width;
     margin: 0 auto;
   }

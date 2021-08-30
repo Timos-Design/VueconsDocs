@@ -1,6 +1,5 @@
 <template>
   <vm-navbar class="vc-navbar">
-    <!-- <b slot="title">Vuecons</b> -->
     <svg
       slot="title"
       xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +23,7 @@
 
     <vm-navbar-item title="Home" routeName="home" />
     <vm-navbar-item title="Library" routeName="library" />
-    <vm-navbar-item title="Getting started" />
+    <vm-navbar-item title="Getting started" routeName="guide" />
 
     <vm-flow slot="action" class="search" v-if="$route.name === 'library'">
       <vm-input
@@ -50,11 +49,8 @@ export default class VCNavbar extends Vue {}
     max-width: $max-width;
     margin: 0 auto;
   }
-  .vm-input {
-    margin: 0;
-  }
   .icon-search {
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
   }
 }
 </style>

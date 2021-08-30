@@ -6,6 +6,7 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 import { Auth } from './utils/auth';
+import './utils/highlightjs';
 
 Vue.config.productionTip = false;
 

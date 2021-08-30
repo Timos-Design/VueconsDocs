@@ -1,6 +1,6 @@
 <template>
   <div class="view-library">
-    <h1>Library. <span>Find the best icons for your next project</span></h1>
+    <h1>Library. <span>Find the best icons for your next project.</span></h1>
     <br />
 
     <div class="grid-wrapper">

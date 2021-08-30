@@ -13,7 +13,9 @@
     </VCHero>
     <div class="hero"></div>
 
-    <div content>Welcome</div>
+    <div content>
+      <!-- <pre v-highlightjs="sourcecode"><code class="typescript"></code></pre> -->
+    </div>
 
     <!-- {{ $store.getters.icons }} -->
 
@@ -32,6 +34,8 @@ import VCHero from '@/components/VCHero.vue';
   },
 })
 export default class Home extends Vue {
+  public sourcecode = 'import Vuecons from "vuecons"';
+
   public fileChanged(e: Event): void {
     const element = e.target as HTMLInputElement;
     this.uploadFiles(element.files);
@@ -67,8 +71,7 @@ export default class Home extends Vue {
   .vc-hero {
     background-size: cover;
     background-repeat: no-repeat;
-    // background-position:  center;
-    padding: 30px 0;
+
     background-image: linear-gradient(
         to bottom,
         rgba(#000, 0.5),

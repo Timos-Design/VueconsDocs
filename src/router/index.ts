@@ -36,6 +36,14 @@ const router = new VueRouter({
         title: 'Icon',
       },
     },
+    {
+      path: '/guide',
+      name: 'guide',
+      component: () => import('@/views/Guide.vue'),
+      meta: {
+        title: 'Guide',
+      },
+    },
     { path: '*', redirect: { name: 'home' } },
   ],
 });

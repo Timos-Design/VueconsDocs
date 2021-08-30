@@ -69,8 +69,6 @@ html {
   scroll-behavior: smooth;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-
-  // background: rgba(var(--vm-paragraph), 1) !important;
 }
 
 body {
@@ -80,8 +78,10 @@ body {
 
 h1 {
   font-size: 2.5em;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
+  letter-spacing: -0.007em;
+  line-height: 1.07;
   span {
     font-weight: 600;
     color: rgba(var(--vm-color-secondary), 1);
@@ -107,6 +107,29 @@ h1 {
 
 [highlight] {
   color: rgba(var(--vm-primary), 1);
+}
+
+.hljs {
+  background: #1e1e1e;
+  border-radius: $border-radius;
+  padding: 20px;
+
+  color: #fff;
+  .hljs-keyword {
+    color: #c586c0;
+  }
+  .hljs-title {
+    color: #4ec9b0;
+  }
+  .function_ {
+    color: #dcdcaa;
+  }
+  .hljs-string {
+    color: #ce9178;
+  }
+  .hljs-attr {
+    color: #9cdcfe;
+  }
 }
 
 .grid-move,
