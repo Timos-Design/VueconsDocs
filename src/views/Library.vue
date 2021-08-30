@@ -13,6 +13,7 @@
         <VCIconTile v-for="i in icons" :key="i" :icon="i" />
       </transition-group>
     </div>
+    <div class="spacer" />
   </div>
 </template>
 
@@ -42,11 +43,16 @@ export default class Library extends Vue {
 <style lang="scss" scoped>
 .view-library {
   padding-top: calc(110px + env(safe-area-inset-top));
+  padding-bottom: 0px;
+
+  .spacer {
+    height: 5vw;
+    max-height: 30px;
+  }
 
   .grid-wrapper {
     padding: 20px;
     background: rgba(var(--vm-paragraph), 1);
-    // min-height: 4rem;
     border-radius: $border-radius;
 
     .vm-title {

@@ -2,7 +2,7 @@
   <div class="view-icon">
     <VCHero>
       <h1>
-        <i :is="componentName" />
+        <i :is="componentName" hierarchical />
         <span>{{ icon }}</span>
       </h1>
     </VCHero>
@@ -11,23 +11,23 @@
     <div content>
       <vm-grid width="100">
         <vm-flow flow="column">
-          <i :is="componentName" huge />
+          <i :is="componentName" huge hierarchical />
           <vm-title subtitle="default" />
         </vm-flow>
         <vm-flow flow="column">
-          <i :is="componentName" slash huge />
+          <i :is="componentName" slash huge hierarchical />
           <vm-title subtitle=".slash" />
         </vm-flow>
         <vm-flow flow="column">
-          <i :is="componentName" circle huge />
+          <i :is="componentName" circle huge hierarchical />
           <vm-title subtitle=".circle" />
         </vm-flow>
         <vm-flow flow="column">
-          <i :is="componentName" square huge />
+          <i :is="componentName" square huge hierarchical />
           <vm-title subtitle=".square" />
         </vm-flow>
         <vm-flow flow="column">
-          <i :is="componentName" rect huge />
+          <i :is="componentName" rect huge hierarchical />
           <vm-title subtitle=".rect" />
         </vm-flow>
       </vm-grid>
@@ -85,11 +85,13 @@
               :rect="options.rect"
               :slash="options.slash"
               :fill="options.fill"
+              hierarchical
             />
           </div>
         </div>
       </div>
     </div>
+    <div class="spacer" />
   </div>
 </template>
 
@@ -147,6 +149,12 @@ export default class Icon extends Vue {
 
   [content] {
     padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .spacer {
+    height: 5vw;
+    max-height: 30px;
   }
 
   [huge] {

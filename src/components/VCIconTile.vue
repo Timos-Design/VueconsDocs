@@ -4,7 +4,7 @@
     class="vc-icon-tile"
     :title="icon"
   >
-    <component :is="componentName" />
+    <component :is="componentName" hierarchical />
   </router-link>
 </template>
 
