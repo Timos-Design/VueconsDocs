@@ -51,9 +51,9 @@ export default class Library extends Vue {
   }
 
   .grid-wrapper {
-    padding: 20px;
-    background: rgba(var(--vm-paragraph), 1);
-    border-radius: $border-radius;
+    // padding: 20px;
+    // background: rgba(var(--vm-paragraph), 1);
+    // border-radius: $border-radius;
 
     .vm-title {
       height: 4rem;

@@ -31,17 +31,17 @@ export default class VCIconTile extends Vue {
   width: 4rem;
 
   color: inherit;
-  text-transform: capitalize;
   text-decoration: none;
 
   font-size: 1.3rem;
 
-  box-shadow: inset 0 0 0 2px rgba(var(--vm-border), 1),
-    2px 4px 8px rgba(#111, 0.08);
+  background: rgba(var(--vm-paragraph), 1);
 
   transition: 0.174s ease-in-out;
   &:hover {
-    background: rgba(var(--vm-background), 1);
+    // font-size: 1.7rem;
+    background: rgba(var(--vm-color), 1);
+    color: rgba(var(--vm-background), 1);
     transform: scale(1.1);
   }
 }

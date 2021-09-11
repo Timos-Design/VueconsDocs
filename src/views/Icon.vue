@@ -20,14 +20,17 @@
         </vm-flow>
         <vm-flow flow="column">
           <i :is="componentName" circle huge hierarchical />
+
           <vm-title subtitle=".circle" />
         </vm-flow>
         <vm-flow flow="column">
           <i :is="componentName" square huge hierarchical />
+
           <vm-title subtitle=".square" />
         </vm-flow>
         <vm-flow flow="column">
           <i :is="componentName" rect huge hierarchical />
+
           <vm-title subtitle=".rect" />
         </vm-flow>
       </vm-grid>
@@ -136,12 +139,20 @@ export default class Icon extends Vue {
   max-width: unset;
 
   .vc-hero {
+    background: linear-gradient(
+      to bottom right,
+      rgba(var(--vm-primary), 1),
+      rgba(var(--vm-primary), 0.5)
+    );
+    color: #fff;
     h1 {
       display: flex;
       align-items: center;
+      justify-content: center;
       max-width: $max-width;
       margin: 0 auto;
       span {
+        color: #ffffffdd;
         margin-left: 10px;
       }
     }
@@ -185,6 +196,7 @@ export default class Icon extends Vue {
         display: grid;
         place-content: center;
         font-size: 5em;
+        position: relative;
       }
     }
   }

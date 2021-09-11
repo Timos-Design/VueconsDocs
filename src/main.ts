@@ -5,15 +5,12 @@ import App from './App.vue';
 import './registerServiceWorker';
 import router from './router';
 import store from './store';
-import { Auth } from './utils/auth';
 import './utils/highlightjs';
 
 Vue.config.productionTip = false;
 
 Vue.use(Vuement, { colors: { primary: '#2ED573' } });
 Vue.use(Vuecons);
-
-Auth.register(router, 'login');
 
 new Vue({
   router,

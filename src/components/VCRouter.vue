@@ -72,10 +72,13 @@ export default class VCRouter extends Vue {
 
 .vc-router {
   position: relative;
-  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden auto;
+
   .sub-view {
+    left: 0;
     right: 0;
-    left: 0px;
     z-index: 10;
     position: absolute;
     min-height: 100vh;

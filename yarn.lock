@@ -9245,10 +9245,10 @@ vue@^2.6.11:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
 
-vuecons@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/vuecons/-/vuecons-0.5.0.tgz#ecb28a9af5c22357969f8637c7aa0d33912c0d08"
-  integrity sha512-2NUGVXsqD5N6U2Go2sjPaMspsR9iSd59uX6arZ4IW20dSGB6dvgXao5oy6GLqXsph2m/+6IS6Vx3SvnRGqip7Q==
+vuecons@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/vuecons/-/vuecons-0.6.0.tgz#4e4666a7adc8b02d69f984080c6794db0858f84f"
+  integrity sha512-ZvNTkPOXg33GkgIf8UfQYMZe69ul/0BJq7+ZXYW1wbR7YEIS4dLtK7aYs6DcEkIZ/GmS44vtU/bP4Sh9msTpqA==
 
 vuement@^0.12.4:
   version "0.12.4"

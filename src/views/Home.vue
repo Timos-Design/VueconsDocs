@@ -13,19 +13,14 @@
     </VCHero>
     <div class="hero"></div>
 
-    <div content>
-      <!-- <pre v-highlightjs="sourcecode"><code class="typescript"></code></pre> -->
-    </div>
+    <div content></div>
 
     <!-- {{ $store.getters.icons }} -->
-
-    <!-- <input type="file" multiple @change="fileChanged" accept=".svg" /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import backend from '@/utils/backend';
 import VCHero from '@/components/VCHero.vue';
 
 @Component({
@@ -33,40 +28,27 @@ import VCHero from '@/components/VCHero.vue';
     VCHero,
   },
 })
-export default class Home extends Vue {
-  public sourcecode = 'import Vuecons from "vuecons"';
-
-  public fileChanged(e: Event): void {
-    const element = e.target as HTMLInputElement;
-    this.uploadFiles(element.files);
-    element.value = '';
-  }
-
-  public uploadFiles(files: FileList | null | undefined): void {
-    if (files && files[0]) {
-      Array.from(files)
-        .filter((x) => !!x)
-        .forEach((f) => {
-          const formData = new FormData();
-          formData.append('vuecon', f, f.name);
-          backend
-            .post('vuecons', formData)
-            .then(({ data }) => {
-              console.log(data);
-            })
-            .catch((error) => {
-              console.error(error.message);
-            });
-        });
-    }
-  }
-}
+export default class Home extends Vue {}
 </script>
 
 <style lang="scss" scoped>
 .view-home {
   padding: 0;
   max-width: unset;
+
+  .square {
+    height: 50px;
+    width: 200px;
+    background: pink;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .square.expanded {
+    height: 200px;
+    width: 250px;
+    text-align: center;
+  }
 
   .vc-hero {
     background-size: cover;

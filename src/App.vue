@@ -110,25 +110,25 @@ h1 {
 }
 
 .hljs {
-  background: #1e1e1e;
+  background: rgba(var(--vm-paragraph), 1);
+  color: rgba(var(--vm-color), 1);
   border-radius: $border-radius;
   padding: 20px;
 
-  color: #fff;
   .hljs-keyword {
-    color: #c586c0;
+    color: #ff4757;
   }
   .hljs-title {
-    color: #4ec9b0;
+    color: #ffa657;
   }
   .function_ {
-    color: #dcdcaa;
+    color: #d2a8ff;
   }
   .hljs-string {
-    color: #ce9178;
+    color: #66bfff;
   }
   .hljs-attr {
-    color: #9cdcfe;
+    color: #66bfff;
   }
 }
 
